@@ -5,11 +5,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 class ApiService {
   // Base URL for the API. For portability we read this from a compile-time
   // environment variable so you can override it at run/build time with
-  // --dart-define=BASE_URL=<url>. If not provided, default to localhost.
+  // --dart-define=BASE_URL=<url>. If not provided, use production backend.
   // Examples:
   //  flutter run -d chrome --dart-define=BASE_URL=http://localhost:5000/api
   //  flutter build web --dart-define=BASE_URL=https://api.example.com
-  static const String baseUrl = String.fromEnvironment('BASE_URL', defaultValue: 'http://localhost:5000/api');
+  static const String baseUrl = String.fromEnvironment('BASE_URL', defaultValue: 'https://blood-availability-system.onrender.com/api');
 
   Future<Map<String, String>> _headers({bool auth = false}) async {
     final headers = {'Content-Type': 'application/json'};
