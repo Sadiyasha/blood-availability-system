@@ -1,0 +1,458 @@
+[
+  {
+    "userId": "test-user",
+    "user_message": "Hi, what can you do?",
+    "bot_response": "Hi there! I can help you find blood donors, blood banks, or answer questions about blood donation. What would you like to know?",
+    "timestamp": "2025-11-12T17:17:22.682748"
+  },
+  {
+    "userId": "demo",
+    "user_message": "need O+ donors in Bangalore urgent",
+    "bot_response": "Blood Type Compatibility:\n\n🅾️ O- (Universal Donor): Can donate to all blood types\n🆎 AB+ (Universal Recipient): Can receive from all blood types\n\n✓ A+ can receive: A+, A-, O+, O-\n✓ A- can receive: A-, O-\n✓ B+ can receive: B+, B-, O+, O-\n✓ B- can receive: B-, O-\n✓ AB+ can receive: All blood types\n✓ AB- can receive: A-, B-, AB-, O-\n✓ O+ can receive: O+, O-\n✓ O- can receive: O-\n\nWhat's your blood type?",
+    "timestamp": "2025-11-12T17:21:47.557334"
+  },
+  {
+    "userId": "demo",
+    "user_message": "find donor O+ in Bangalore urgent",
+    "bot_response": "I can help you find blood donors! Please provide:\n\n1️⃣ Required blood type (e.g., O+, A-, etc.)\n2️⃣ Your location (city/area)\n3️⃣ Urgency level (Critical/Urgent/Normal)\n\nYou can use our Smart Match feature to find the best donors near you!",
+    "timestamp": "2025-11-12T17:21:58.539074"
+  },
+  {
+    "userId": "demo",
+    "user_message": "find donor O+ in Bangalore",
+    "bot_response": "I can help you find blood donors! Please provide:\n\n1️⃣ Required blood type (e.g., O+, A-, etc.)\n2️⃣ Your location (city/area)\n3️⃣ Urgency level (Critical/Urgent/Normal)\n\nYou can use our Smart Match feature to find the best donors near you!",
+    "timestamp": "2025-11-12T17:22:30.678536"
+  },
+  {
+    "userId": "demo",
+    "user_message": "find donor O+ in Bangalore urgent",
+    "bot_response": "I can help you find blood donors! Please provide:\n\n1️⃣ Required blood type (e.g., O+, A-, etc.)\n2️⃣ Your location (city/area)\n3️⃣ Urgency level (Critical/Urgent/Normal)\n\nYou can use our Smart Match feature to find the best donors near you!",
+    "timestamp": "2025-11-12T17:23:12.116325"
+  },
+  {
+    "userId": "demo",
+    "user_message": "O+ availability in Delhi",
+    "bot_response": "Hi there! I can help you find blood donors, blood banks, or answer questions about blood donation. What would you like to know?",
+    "timestamp": "2025-11-12T17:24:17.095458"
+  },
+  {
+    "userId": "demo",
+    "user_message": "find donor O+ in Bangalore urgent",
+    "bot_response": "I can help you find blood donors! Please provide:\n\n1️⃣ Required blood type (e.g., O+, A-, etc.)\n2️⃣ Your location (city/area)\n3️⃣ Urgency level (Critical/Urgent/Normal)\n\nYou can use our Smart Match feature to find the best donors near you!",
+    "timestamp": "2025-11-12T17:25:10.128544"
+  },
+  {
+    "userId": "demo",
+    "user_message": "find donor O+ in Bangalore urgent",
+    "bot_response": "I can help you find blood donors! Please provide:\n\n1️⃣ Required blood type (e.g., O+, A-, etc.)\n2️⃣ Your location (city/area)\n3️⃣ Urgency level (Critical/Urgent/Normal)\n\nYou can use our Smart Match feature to find the best donors near you!",
+    "timestamp": "2025-11-12T17:27:02.029279"
+  },
+  {
+    "userId": "demo",
+    "user_message": "find donor O+ in Bangalore urgent",
+    "bot_response": "Here are nearby donor matches:\n• Suresh Nair 10 (O+) - 1314.58 km, score 100\n• Ravi Krishnan 12 (O-) - 1136.59 km, score 100\n• Sneha Reddy 15 (O+) - 1254.47 km, score 100",
+    "timestamp": "2025-11-12T17:31:14.352774"
+  },
+  {
+    "userId": "guest",
+    "user_message": "hi",
+    "bot_response": "Hello! I'm here to help you with blood donation queries. How can I assist you today?",
+    "timestamp": "2025-11-12T17:32:06.160939"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Blood Banks",
+    "bot_response": "You can find blood banks through our system:\n\n📍 Use the Map feature to see nearby blood banks\n🔍 Search by city or area\n📊 Check real-time blood inventory\n📞 Get contact information\n\nWould you like to search for blood banks in your area?",
+    "timestamp": "2025-11-12T17:32:08.271858"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Search Banks",
+    "bot_response": "Please provide a blood type (e.g., O+, A-, etc.) and your city (e.g., Bangalore).",
+    "timestamp": "2025-11-12T17:32:10.539130"
+  },
+  {
+    "userId": "guest",
+    "user_message": "o+ve",
+    "bot_response": "Blood Type Compatibility:\n\n🅾️ O- (Universal Donor): Can donate to all blood types\n🆎 AB+ (Universal Recipient): Can receive from all blood types\n\n✓ A+ can receive: A+, A-, O+, O-\n✓ A- can receive: A-, O-\n✓ B+ can receive: B+, B-, O+, O-\n✓ B- can receive: B-, O-\n✓ AB+ can receive: All blood types\n✓ AB- can receive: A-, B-, AB-, O-\n✓ O+ can receive: O+, O-\n✓ O- can receive: O-\n\nWhat's your blood type?",
+    "timestamp": "2025-11-12T17:32:17.040661"
+  },
+  {
+    "userId": "guest",
+    "user_message": "o-",
+    "bot_response": "Blood Type Compatibility:\n\n🅾️ O- (Universal Donor): Can donate to all blood types\n🆎 AB+ (Universal Recipient): Can receive from all blood types\n\n✓ A+ can receive: A+, A-, O+, O-\n✓ A- can receive: A-, O-\n✓ B+ can receive: B+, B-, O+, O-\n✓ B- can receive: B-, O-\n✓ AB+ can receive: All blood types\n✓ AB- can receive: A-, B-, AB-, O-\n✓ O+ can receive: O+, O-\n✓ O- can receive: O-\n\nWhat's your blood type?",
+    "timestamp": "2025-11-12T17:32:26.256279"
+  },
+  {
+    "userId": "guest",
+    "user_message": "b+",
+    "bot_response": "Blood Type Compatibility:\n\n🅾️ O- (Universal Donor): Can donate to all blood types\n🆎 AB+ (Universal Recipient): Can receive from all blood types\n\n✓ A+ can receive: A+, A-, O+, O-\n✓ A- can receive: A-, O-\n✓ B+ can receive: B+, B-, O+, O-\n✓ B- can receive: B-, O-\n✓ AB+ can receive: All blood types\n✓ AB- can receive: A-, B-, AB-, O-\n✓ O+ can receive: O+, O-\n✓ O- can receive: O-\n\nWhat's your blood type?",
+    "timestamp": "2025-11-12T17:32:33.174064"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Help",
+    "bot_response": "📞 Contact Information:\n\n🏥 Emergency Helpline: 102\n📧 Email: support@bloodsystem.in\n📱 Phone: +91-XXXX-XXXXXX\n⏰ Available: 24/7\n\n💬 You can also:\n• Use in-app chat\n• Visit nearest blood bank\n• Call any listed hospital\n\nHow can we help you today?",
+    "timestamp": "2025-11-12T17:32:37.457964"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Find Donors",
+    "bot_response": "Please provide a blood type (e.g., O+, A-, etc.) and your city (e.g., Bangalore).",
+    "timestamp": "2025-11-12T17:32:40.519413"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Find Donors",
+    "bot_response": "Please provide a blood type (e.g., O+, A-, etc.) and your city (e.g., Bangalore).",
+    "timestamp": "2025-11-12T17:32:44.139024"
+  },
+  {
+    "userId": "guest",
+    "user_message": "o+",
+    "bot_response": "Blood Type Compatibility:\n\n🅾️ O- (Universal Donor): Can donate to all blood types\n🆎 AB+ (Universal Recipient): Can receive from all blood types\n\n✓ A+ can receive: A+, A-, O+, O-\n✓ A- can receive: A-, O-\n✓ B+ can receive: B+, B-, O+, O-\n✓ B- can receive: B-, O-\n✓ AB+ can receive: All blood types\n✓ AB- can receive: A-, B-, AB-, O-\n✓ O+ can receive: O+, O-\n✓ O- can receive: O-\n\nWhat's your blood type?",
+    "timestamp": "2025-11-12T17:32:47.999932"
+  },
+  {
+    "userId": "guest",
+    "user_message": "o+",
+    "bot_response": "Blood Type Compatibility:\n\n🅾️ O- (Universal Donor): Can donate to all blood types\n🆎 AB+ (Universal Recipient): Can receive from all blood types\n\n✓ A+ can receive: A+, A-, O+, O-\n✓ A- can receive: A-, O-\n✓ B+ can receive: B+, B-, O+, O-\n✓ B- can receive: B-, O-\n✓ AB+ can receive: All blood types\n✓ AB- can receive: A-, B-, AB-, O-\n✓ O+ can receive: O+, O-\n✓ O- can receive: O-\n\nWhat's your blood type?",
+    "timestamp": "2025-11-12T17:32:57.982856"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Blood Banks",
+    "bot_response": "You can find blood banks through our system:\n\n📍 Use the Map feature to see nearby blood banks\n🔍 Search by city or area\n📊 Check real-time blood inventory\n📞 Get contact information\n\nWould you like to search for blood banks in your area?",
+    "timestamp": "2025-11-12T17:33:46.773912"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Check Inventory",
+    "bot_response": "Please specify a blood group (e.g., O+) and city (e.g., Delhi) to check inventory.",
+    "timestamp": "2025-11-12T17:33:52.839523"
+  },
+  {
+    "userId": "guest",
+    "user_message": "o+",
+    "bot_response": "Blood Type Compatibility:\n\n🅾️ O- (Universal Donor): Can donate to all blood types\n🆎 AB+ (Universal Recipient): Can receive from all blood types\n\n✓ A+ can receive: A+, A-, O+, O-\n✓ A- can receive: A-, O-\n✓ B+ can receive: B+, B-, O+, O-\n✓ B- can receive: B-, O-\n✓ AB+ can receive: All blood types\n✓ AB- can receive: A-, B-, AB-, O-\n✓ O+ can receive: O+, O-\n✓ O- can receive: O-\n\nWhat's your blood type?",
+    "timestamp": "2025-11-12T17:34:00.323028"
+  },
+  {
+    "userId": "demo",
+    "user_message": "O+",
+    "bot_response": "Blood Type Compatibility:\n\n🅾️ O- (Universal Donor): Can donate to all blood types\n🆎 AB+ (Universal Recipient): Can receive from all blood types\n\n✓ A+ can receive: A+, A-, O+, O-\n✓ A- can receive: A-, O-\n✓ B+ can receive: B+, B-, O+, O-\n✓ B- can receive: B-, O-\n✓ AB+ can receive: All blood types\n✓ AB- can receive: A-, B-, AB-, O-\n✓ O+ can receive: O+, O-\n✓ O- can receive: O-\n\nWhat's your blood type?",
+    "timestamp": "2025-11-12T17:38:00.356816"
+  },
+  {
+    "userId": "slot-test3",
+    "user_message": "O+",
+    "bot_response": "Got it, your blood group is O+. Which city are you in?",
+    "timestamp": "2025-11-12T18:31:54.188543"
+  },
+  {
+    "userId": "slot-test3",
+    "user_message": "Bangalore",
+    "bot_response": "Thanks. How urgent is it? Choose one: Critical, Urgent, Normal.",
+    "timestamp": "2025-11-12T18:31:54.397251"
+  },
+  {
+    "userId": "slot-test3",
+    "user_message": "urgent",
+    "bot_response": "Please provide a blood type (e.g., O+, A-, etc.) and your city (e.g., Bangalore).",
+    "timestamp": "2025-11-12T18:32:07.087630"
+  },
+  {
+    "userId": "slot-test4",
+    "user_message": "O+",
+    "bot_response": "Got it, your blood group is O+. Which city are you in?",
+    "timestamp": "2025-11-12T18:33:36.034374"
+  },
+  {
+    "userId": "slot-test4",
+    "user_message": "Bangalore",
+    "bot_response": "Thanks. How urgent is it? Choose one: Critical, Urgent, Normal.",
+    "timestamp": "2025-11-12T18:33:36.096009"
+  },
+  {
+    "userId": "slot-test4",
+    "user_message": "urgent",
+    "bot_response": "Please provide a blood type (e.g., O+, A-, etc.) and your city (e.g., Bangalore).",
+    "timestamp": "2025-11-12T18:33:36.139276"
+  },
+  {
+    "userId": "slot-debug",
+    "user_message": "O+",
+    "bot_response": "Got it, your blood group is O+. Which city are you in?",
+    "timestamp": "2025-11-12T18:36:56.581194"
+  },
+  {
+    "userId": "slot-debug",
+    "user_message": "Bangalore",
+    "bot_response": "Thanks. How urgent is it? Choose one: Critical, Urgent, Normal.",
+    "timestamp": "2025-11-12T18:36:56.648820"
+  },
+  {
+    "userId": "slot-debug",
+    "user_message": "urgent",
+    "bot_response": "Here are nearby donor matches:\n• Suresh Nair 10 (O+) - 1314.58 km, score 100\n• Ravi Krishnan 12 (O-) - 1136.59 km, score 100\n• Sneha Reddy 15 (O+) - 1254.47 km, score 100\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-12T18:36:56.827998"
+  },
+  {
+    "userId": "guest",
+    "user_message": "hi",
+    "bot_response": "Hi there! I can help you find blood donors, blood banks, or answer questions about blood donation. What would you like to know?",
+    "timestamp": "2025-11-12T19:02:56.853171"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Blood Banks",
+    "bot_response": "You can find blood banks through our system:\n\n📍 Use the Map feature to see nearby blood banks\n🔍 Search by city or area\n📊 Check real-time blood inventory\n📞 Get contact information\n\nWould you like to search for blood banks in your area?",
+    "timestamp": "2025-11-12T19:02:59.545265"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Search Banks",
+    "bot_response": "Please provide a blood type (e.g., O+, A-, etc.) and your city (e.g., Bangalore).",
+    "timestamp": "2025-11-12T19:03:01.644729"
+  },
+  {
+    "userId": "guest",
+    "user_message": "o+",
+    "bot_response": "Thanks. How urgent is it? Choose one: Critical, Urgent, Normal.",
+    "timestamp": "2025-11-12T19:03:06.436480"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Urgent",
+    "bot_response": "Here are nearby donor matches:\n• Suresh Nair 10 (O+) - 1314.58 km, score 100\n• Ravi Krishnan 12 (O-) - 1136.59 km, score 100\n• Sneha Reddy 15 (O+) - 1254.47 km, score 100\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-12T19:03:12.424487"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Show More Donors",
+    "bot_response": "Here are nearby donor matches:\n• Suresh Nair 10 (O+) - 1314.58 km, score 100\n• Ravi Krishnan 12 (O-) - 1136.59 km, score 100\n• Sneha Reddy 15 (O+) - 1254.47 km, score 100\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-12T19:03:24.261659"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Check Blood Banks",
+    "bot_response": "Here are nearby donor matches:\n• Suresh Nair 10 (O+) - 1314.58 km, score 100\n• Ravi Krishnan 12 (O-) - 1136.59 km, score 100\n• Sneha Reddy 15 (O+) - 1254.47 km, score 100\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-12T19:03:28.127200"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Check Blood Banks",
+    "bot_response": "Here are nearby donor matches:\n• Suresh Nair 10 (O+) - 1314.58 km, score 100\n• Ravi Krishnan 12 (O-) - 1136.59 km, score 100\n• Sneha Reddy 15 (O+) - 1254.47 km, score 100\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-12T19:03:30.643611"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Check Blood Banks",
+    "bot_response": "Here are nearby donor matches:\n• Suresh Nair 10 (O+) - 1314.58 km, score 100\n• Ravi Krishnan 12 (O-) - 1136.59 km, score 100\n• Sneha Reddy 15 (O+) - 1254.47 km, score 100\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-12T19:03:34.463735"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Show More Donors",
+    "bot_response": "Here are nearby donor matches:\n• Suresh Nair 10 (O+) - 1314.58 km, score 100\n• Ravi Krishnan 12 (O-) - 1136.59 km, score 100\n• Sneha Reddy 15 (O+) - 1254.47 km, score 100\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-12T19:03:36.686675"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Contact Top Donors",
+    "bot_response": "Here are nearby donor matches:\n• Suresh Nair 10 (O+) - 1314.58 km, score 100\n• Ravi Krishnan 12 (O-) - 1136.59 km, score 100\n• Sneha Reddy 15 (O+) - 1254.47 km, score 100\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-12T19:03:38.185297"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Check Inventory",
+    "bot_response": "Here are nearby donor matches:\n• Suresh Nair 10 (O+) - 1314.58 km, score 100\n• Ravi Krishnan 12 (O-) - 1136.59 km, score 100\n• Sneha Reddy 15 (O+) - 1254.47 km, score 100\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-12T19:03:48.162922"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Show More Donors",
+    "bot_response": "Here are nearby donor matches:\n• Suresh Nair 10 (O+) - 1314.58 km, score 100\n• Ravi Krishnan 12 (O-) - 1136.59 km, score 100\n• Sneha Reddy 15 (O+) - 1254.47 km, score 100\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-12T19:03:55.142633"
+  },
+  {
+    "userId": "guest",
+    "user_message": "emergency contacts",
+    "bot_response": "Here are nearby donor matches:\n• Suresh Nair 10 (O+) - 1314.58 km, score 100\n• Ravi Krishnan 12 (O-) - 1136.59 km, score 100\n• Sneha Reddy 15 (O+) - 1254.47 km, score 100\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-12T19:04:39.995570"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Show More Donors",
+    "bot_response": "Here are nearby donor matches:\n• Suresh Nair 10 (O+) - 1314.58 km, score 100\n• Ravi Krishnan 12 (O-) - 1136.59 km, score 100\n• Sneha Reddy 15 (O+) - 1254.47 km, score 100\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-12T19:04:45.051482"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Check Blood Banks",
+    "bot_response": "Here are nearby donor matches:\n• Suresh Nair 10 (O+) - 1314.58 km, score 100\n• Ravi Krishnan 12 (O-) - 1136.59 km, score 100\n• Sneha Reddy 15 (O+) - 1254.47 km, score 100\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-12T19:04:49.728905"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Check Blood Banks",
+    "bot_response": "Here are nearby donor matches:\n• Suresh Nair 10 (O+) - 1314.58 km, score 100\n• Ravi Krishnan 12 (O-) - 1136.59 km, score 100\n• Sneha Reddy 15 (O+) - 1254.47 km, score 100\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-12T19:26:26.438009"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Check Blood Banks",
+    "bot_response": "Here are nearby donor matches:\n• Suresh Nair 10 (O+) - 1314.58 km, score 100\n• Ravi Krishnan 12 (O-) - 1136.59 km, score 100\n• Sneha Reddy 15 (O+) - 1254.47 km, score 100\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-12T19:26:30.642409"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Contact Top Donors",
+    "bot_response": "Here are nearby donor matches:\n• Suresh Nair 10 (O+) - 1314.58 km, score 100\n• Ravi Krishnan 12 (O-) - 1136.59 km, score 100\n• Sneha Reddy 15 (O+) - 1254.47 km, score 100\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-12T19:26:33.362256"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Contact Top Donors",
+    "bot_response": "Here are nearby donor matches:\n• Suresh Nair 10 (O+) - 1314.58 km, score 100\n• Ravi Krishnan 12 (O-) - 1136.59 km, score 100\n• Sneha Reddy 15 (O+) - 1254.47 km, score 100\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-12T19:26:35.423773"
+  },
+  {
+    "userId": "qa",
+    "user_message": "Hello",
+    "bot_response": "Hi there! I can help you find blood donors, blood banks, or answer questions about blood donation. What would you like to know?",
+    "timestamp": "2025-11-13T05:24:48.301641"
+  },
+  {
+    "userId": "qa",
+    "user_message": "Need O+ in Bangalore urgent",
+    "bot_response": "Blood Type Compatibility:\n\n🅾️ O- (Universal Donor): Can donate to all blood types\n🆎 AB+ (Universal Recipient): Can receive from all blood types\n\n✓ A+ can receive: A+, A-, O+, O-\n✓ A- can receive: A-, O-\n✓ B+ can receive: B+, B-, O+, O-\n✓ B- can receive: B-, O-\n✓ AB+ can receive: All blood types\n✓ AB- can receive: A-, B-, AB-, O-\n✓ O+ can receive: O+, O-\n✓ O- can receive: O-\n\nWhat's your blood type?",
+    "timestamp": "2025-11-13T05:24:48.497580"
+  },
+  {
+    "userId": "qa",
+    "user_message": "Nearest hospital in Hyderabad",
+    "bot_response": "Here are hospitals near Hyderabad:\n• Gandhi Hospital (Hyderabad)\n• KIMS Hospital (Hyderabad)",
+    "timestamp": "2025-11-13T05:24:48.710587"
+  },
+  {
+    "userId": "qa",
+    "user_message": "Hello",
+    "bot_response": "Welcome to Blood Availability System! Ask me anything about blood donation, donors, or blood banks.",
+    "timestamp": "2025-11-13T05:25:04.294049"
+  },
+  {
+    "userId": "qa",
+    "user_message": "Need O+ in Bangalore urgent",
+    "bot_response": "Blood Type Compatibility:\n\n🅾️ O- (Universal Donor): Can donate to all blood types\n🆎 AB+ (Universal Recipient): Can receive from all blood types\n\n✓ A+ can receive: A+, A-, O+, O-\n✓ A- can receive: A-, O-\n✓ B+ can receive: B+, B-, O+, O-\n✓ B- can receive: B-, O-\n✓ AB+ can receive: All blood types\n✓ AB- can receive: A-, B-, AB-, O-\n✓ O+ can receive: O+, O-\n✓ O- can receive: O-\n\nWhat's your blood type?",
+    "timestamp": "2025-11-13T05:25:04.332052"
+  },
+  {
+    "userId": "qa",
+    "user_message": "Nearest hospital in Hyderabad",
+    "bot_response": "Here are hospitals near Hyderabad:\n• Gandhi Hospital (Hyderabad)\n• KIMS Hospital (Hyderabad)",
+    "timestamp": "2025-11-13T05:25:04.497157"
+  },
+  {
+    "userId": "guest",
+    "user_message": "hi",
+    "bot_response": "Welcome to Blood Availability System! Ask me anything about blood donation, donors, or blood banks.",
+    "timestamp": "2025-11-13T05:27:05.408318"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Find Donors",
+    "bot_response": "Please provide a blood type (e.g., O+, A-, etc.) and your city (e.g., Bangalore).",
+    "timestamp": "2025-11-13T05:27:07.317299"
+  },
+  {
+    "userId": "guest",
+    "user_message": "o+",
+    "bot_response": "Thanks. How urgent is it? Choose one: Critical, Urgent, Normal.",
+    "timestamp": "2025-11-13T05:27:11.155723"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Urgent",
+    "bot_response": "Here are nearby donor matches:\n• Divya Menon 8 (O+) - 17.96 km, score 100\n• Suresh Nair 12 (O-) - 1308.19 km, score 100\n• Pooja Deshmukh 14 (O+) - 1305.45 km, score 100\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-13T05:27:13.662652"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Check Blood Banks",
+    "bot_response": "You can find blood banks through our system:\n\n📍 Use the Map feature to see nearby blood banks\n🔍 Search by city or area\n📊 Check real-time blood inventory\n📞 Get contact information\n\nWould you like to search for blood banks in your area?",
+    "timestamp": "2025-11-13T05:27:19.046981"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Search Banks",
+    "bot_response": "Here are nearby donor matches:\n• Divya Menon 8 (O+) - 17.96 km, score 100\n• Suresh Nair 12 (O-) - 1308.19 km, score 100\n• Pooja Deshmukh 14 (O+) - 1305.45 km, score 100\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-13T05:27:23.570650"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Contact Top Donors",
+    "bot_response": "Here are nearby donor matches:\n• Divya Menon 8 (O+) - 17.96 km, score 100\n• Suresh Nair 12 (O-) - 1308.19 km, score 100\n• Pooja Deshmukh 14 (O+) - 1305.45 km, score 100\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-13T05:27:26.977222"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Show More Donors",
+    "bot_response": "Here are nearby donor matches:\n• Divya Menon 8 (O+) - 17.96 km, score 100\n• Suresh Nair 12 (O-) - 1308.19 km, score 100\n• Pooja Deshmukh 14 (O+) - 1305.45 km, score 100\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-13T05:27:29.244436"
+  },
+  {
+    "userId": "guest",
+    "user_message": "View Map",
+    "bot_response": "I can help you with:\n\n🔍 Finding blood donors\n🏥 Locating blood banks\n📋 Blood donation eligibility\n🩸 Blood type compatibility\n❓ Donation process & benefits\n🚨 Emergency blood requests\n\nWhat would you like to know?",
+    "timestamp": "2025-11-13T05:27:35.464798"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Register",
+    "bot_response": "I can help you with:\n\n🔍 Finding blood donors\n🏥 Locating blood banks\n📋 Blood donation eligibility\n🩸 Blood type compatibility\n❓ Donation process & benefits\n🚨 Emergency blood requests\n\nWhat would you like to know?",
+    "timestamp": "2025-11-13T05:27:41.985194"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Blood Banks",
+    "bot_response": "You can find blood banks through our system:\n\n📍 Use the Map feature to see nearby blood banks\n🔍 Search by city or area\n📊 Check real-time blood inventory\n📞 Get contact information\n\nWould you like to search for blood banks in your area?",
+    "timestamp": "2025-11-13T05:27:47.288102"
+  },
+  {
+    "userId": "guest",
+    "user_message": "hi",
+    "bot_response": "Hi there! I can help you find blood donors, blood banks, or answer questions about blood donation. What would you like to know?",
+    "timestamp": "2025-11-13T05:54:25.467346"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Find Donors",
+    "bot_response": "Here are nearby donor matches:\n• Divya Menon 8 (O+) - 17.96 km, score 100\n• Suresh Nair 12 (O-) - 1308.19 km, score 100\n• Pooja Deshmukh 14 (O+) - 1305.45 km, score 100\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-13T05:54:27.599815"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Check Blood Banks",
+    "bot_response": "You can find blood banks through our system:\n\n📍 Use the Map feature to see nearby blood banks\n🔍 Search by city or area\n📊 Check real-time blood inventory\n📞 Get contact information\n\nWould you like to search for blood banks in your area?",
+    "timestamp": "2025-11-13T05:54:31.455038"
+  },
+  {
+    "userId": "guest",
+    "user_message": "View Map",
+    "bot_response": "I can help you with:\n\n🔍 Finding blood donors\n🏥 Locating blood banks\n📋 Blood donation eligibility\n🩸 Blood type compatibility\n❓ Donation process & benefits\n🚨 Emergency blood requests\n\nWhat would you like to know?",
+    "timestamp": "2025-11-13T05:54:37.353994"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Register",
+    "bot_response": "I can help you with:\n\n🔍 Finding blood donors\n🏥 Locating blood banks\n📋 Blood donation eligibility\n🩸 Blood type compatibility\n❓ Donation process & benefits\n🚨 Emergency blood requests\n\nWhat would you like to know?",
+    "timestamp": "2025-11-13T05:54:41.631466"
+  },
+  {
+    "userId": "diag",
+    "user_message": "Diagnostic ping",
+    "bot_response": "I can help you with:\n\n🔍 Finding blood donors\n🏥 Locating blood banks\n📋 Blood donation eligibility\n🩸 Blood type compatibility\n❓ Donation process & benefits\n🚨 Emergency blood requests\n\nWhat would you like to know?",
+    "timestamp": "2025-11-13T09:38:50.612266"
+  }
+]

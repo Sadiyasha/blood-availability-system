@@ -1,0 +1,27 @@
+Flask==3.0.0
+Flask-SQLAlchemy==3.1.1
+Flask-CORS==4.0.0
+Flask-Migrate==4.0.5
+PyMySQL==1.1.0
+python-dotenv==1.0.0
+gunicorn==21.2.0
+
+# AI/ML Frameworks (use latest compatible versions)
+scikit-learn
+numpy
+pandas
+
+# Google Maps API
+googlemaps==4.10.0
+geopy==2.4.1
+
+# Firebase (Optional)
+firebase-admin
+
+# Chatbot - NLP
+nltk==3.8.1
+
+# Additional utilities
+requests==2.31.0
+python-dateutil==2.8.2
+Faker==18.9.0

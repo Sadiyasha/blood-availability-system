@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "884714637661",
+    "project_id": "ai-powered-bas",
+    "storage_bucket": "ai-powered-bas.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884714637661:android:5d5f543e603a3105ea00b4",
+        "android_client_info": {
+          "package_name": "com.example.blood_availability_system"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALgu6z4d2x81SSTJvax7yMBjTnZWWits0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
