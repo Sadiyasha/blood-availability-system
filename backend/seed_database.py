@@ -55,8 +55,11 @@ def seed_database():
             lat_offset = random.uniform(-0.1, 0.1)
             lon_offset = random.uniform(-0.1, 0.1)
             
+            # Generate realistic donation count
+            total_donations = random.randint(0, 50)
+            
             donor = Donor(
-                name=f"{random.choice(donor_names)} {i+1}",
+                name=random.choice(donor_names),
                 blood_type=random.choice(blood_types),
                 phone=f"+91-{random.randint(7000000000, 9999999999)}",
                 email=f"donor{i+1}@example.com",
@@ -68,7 +71,7 @@ def seed_database():
                 longitude=city_data['longitude'] + lon_offset,
                 available_for_donation=random.choice([True, True, True, False]),
                 last_donation_date=datetime.utcnow() - timedelta(days=random.randint(0, 365)),
-                total_donations=random.randint(0, 25),
+                total_donations=total_donations,
                 rating=round(random.uniform(4.0, 5.0), 1)
             )
             donors.append(donor)
@@ -80,23 +83,83 @@ def seed_database():
         # Create Government Hospitals
         print("Creating hospitals...")
         govt_hospitals = [
+            # Delhi
             {'name': 'AIIMS Delhi', 'city': 'Delhi', 'type': 'Government', 'capacity': 2500},
+            {'name': 'Safdarjung Hospital', 'city': 'Delhi', 'type': 'Government', 'capacity': 2200},
+            {'name': 'Ram Manohar Lohia Hospital', 'city': 'Delhi', 'type': 'Government', 'capacity': 1800},
+            {'name': 'Lady Hardinge Medical College', 'city': 'Delhi', 'type': 'Government', 'capacity': 1400},
+            {'name': 'GTB Hospital', 'city': 'Delhi', 'type': 'Government', 'capacity': 1500},
+            # Mumbai
             {'name': 'KEM Hospital', 'city': 'Mumbai', 'type': 'Government', 'capacity': 2000},
+            {'name': 'Sion Hospital', 'city': 'Mumbai', 'type': 'Government', 'capacity': 1600},
+            {'name': 'JJ Hospital', 'city': 'Mumbai', 'type': 'Government', 'capacity': 1800},
+            {'name': 'Nair Hospital', 'city': 'Mumbai', 'type': 'Government', 'capacity': 1400},
+            {'name': 'Rajawadi Hospital', 'city': 'Mumbai', 'type': 'Government', 'capacity': 1200},
+            # Bangalore
             {'name': 'Victoria Hospital', 'city': 'Bangalore', 'type': 'Government', 'capacity': 1800},
+            {'name': 'Bowring Hospital', 'city': 'Bangalore', 'type': 'Government', 'capacity': 1200},
+            {'name': 'KC General Hospital', 'city': 'Bangalore', 'type': 'Government', 'capacity': 1400},
+            {'name': 'Jayanagar General Hospital', 'city': 'Bangalore', 'type': 'Government', 'capacity': 1000},
+            # Hyderabad
             {'name': 'Gandhi Hospital', 'city': 'Hyderabad', 'type': 'Government', 'capacity': 1500},
+            {'name': 'Osmania General Hospital', 'city': 'Hyderabad', 'type': 'Government', 'capacity': 2000},
+            {'name': 'Niloufer Hospital', 'city': 'Hyderabad', 'type': 'Government', 'capacity': 1200},
+            # Chennai
             {'name': 'Government General Hospital', 'city': 'Chennai', 'type': 'Government', 'capacity': 2200},
+            {'name': 'Stanley Medical College', 'city': 'Chennai', 'type': 'Government', 'capacity': 1800},
+            {'name': 'Rajiv Gandhi Hospital', 'city': 'Chennai', 'type': 'Government', 'capacity': 1600},
+            # Kolkata
             {'name': 'Medical College Kolkata', 'city': 'Kolkata', 'type': 'Government', 'capacity': 1600},
+            {'name': 'SSKM Hospital', 'city': 'Kolkata', 'type': 'Government', 'capacity': 2000},
+            {'name': 'RG Kar Medical College', 'city': 'Kolkata', 'type': 'Government', 'capacity': 1400},
+            # Pune
             {'name': 'Sassoon Hospital', 'city': 'Pune', 'type': 'Government', 'capacity': 1400},
+            {'name': 'YCM Hospital', 'city': 'Pune', 'type': 'Government', 'capacity': 1200},
+            # Ahmedabad
             {'name': 'Civil Hospital', 'city': 'Ahmedabad', 'type': 'Government', 'capacity': 1200},
+            {'name': 'LG Hospital', 'city': 'Ahmedabad', 'type': 'Government', 'capacity': 1000},
         ]
         
         private_hospitals = [
+            # Delhi
             {'name': 'Apollo Hospital', 'city': 'Delhi', 'type': 'Private', 'capacity': 1000},
+            {'name': 'Max Super Speciality Hospital', 'city': 'Delhi', 'type': 'Private', 'capacity': 900},
+            {'name': 'Indraprastha Apollo', 'city': 'Delhi', 'type': 'Private', 'capacity': 850},
+            {'name': 'Fortis Escorts Heart Institute', 'city': 'Delhi', 'type': 'Private', 'capacity': 800},
+            {'name': 'Sir Ganga Ram Hospital', 'city': 'Delhi', 'type': 'Private', 'capacity': 750},
+            # Mumbai
             {'name': 'Fortis Hospital', 'city': 'Mumbai', 'type': 'Private', 'capacity': 800},
+            {'name': 'Lilavati Hospital', 'city': 'Mumbai', 'type': 'Private', 'capacity': 900},
+            {'name': 'Jaslok Hospital', 'city': 'Mumbai', 'type': 'Private', 'capacity': 750},
+            {'name': 'Breach Candy Hospital', 'city': 'Mumbai', 'type': 'Private', 'capacity': 700},
+            {'name': 'Hinduja Hospital', 'city': 'Mumbai', 'type': 'Private', 'capacity': 850},
+            # Bangalore
             {'name': 'Manipal Hospital', 'city': 'Bangalore', 'type': 'Private', 'capacity': 900},
+            {'name': 'Apollo BGS Hospital', 'city': 'Bangalore', 'type': 'Private', 'capacity': 800},
+            {'name': 'Fortis Hospital Bannerghatta', 'city': 'Bangalore', 'type': 'Private', 'capacity': 750},
+            {'name': 'Columbia Asia Hospital', 'city': 'Bangalore', 'type': 'Private', 'capacity': 650},
+            {'name': 'Narayana Health City', 'city': 'Bangalore', 'type': 'Private', 'capacity': 950},
+            # Hyderabad
             {'name': 'KIMS Hospital', 'city': 'Hyderabad', 'type': 'Private', 'capacity': 700},
+            {'name': 'Yashoda Hospital', 'city': 'Hyderabad', 'type': 'Private', 'capacity': 800},
+            {'name': 'Care Hospital', 'city': 'Hyderabad', 'type': 'Private', 'capacity': 750},
+            {'name': 'Apollo Hospital Jubilee Hills', 'city': 'Hyderabad', 'type': 'Private', 'capacity': 850},
+            # Chennai
             {'name': 'Apollo Chennai', 'city': 'Chennai', 'type': 'Private', 'capacity': 950},
+            {'name': 'Fortis Malar Hospital', 'city': 'Chennai', 'type': 'Private', 'capacity': 700},
+            {'name': 'MIOT International', 'city': 'Chennai', 'type': 'Private', 'capacity': 800},
+            {'name': 'Gleneagles Global Hospital', 'city': 'Chennai', 'type': 'Private', 'capacity': 750},
+            # Kolkata
             {'name': 'Ruby Hospital', 'city': 'Kolkata', 'type': 'Private', 'capacity': 600},
+            {'name': 'Apollo Gleneagles', 'city': 'Kolkata', 'type': 'Private', 'capacity': 750},
+            {'name': 'Fortis Hospital', 'city': 'Kolkata', 'type': 'Private', 'capacity': 700},
+            {'name': 'AMRI Hospital', 'city': 'Kolkata', 'type': 'Private', 'capacity': 650},
+            # Pune
+            {'name': 'Ruby Hall Clinic', 'city': 'Pune', 'type': 'Private', 'capacity': 700},
+            {'name': 'Sahyadri Hospital', 'city': 'Pune', 'type': 'Private', 'capacity': 650},
+            # Ahmedabad
+            {'name': 'Sterling Hospital', 'city': 'Ahmedabad', 'type': 'Private', 'capacity': 600},
+            {'name': 'Apollo Hospital', 'city': 'Ahmedabad', 'type': 'Private', 'capacity': 700},
         ]
         
         hospitals = []
@@ -172,7 +235,7 @@ def seed_database():
             urgency = random.choice(['Normal', 'Normal', 'Urgent', 'Critical'])
             
             req = BloodRequest(
-                patient_name=f"{random.choice(patient_names)} {i+1}",
+                patient_name=random.choice(patient_names),
                 blood_type=random.choice(blood_types),
                 units_required=random.randint(1, 5),
                 urgency=urgency,

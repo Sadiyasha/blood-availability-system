@@ -418,5 +418,467 @@
     "user_message": "Show More Donors",
     "bot_response": "Here are nearby donor matches:\n• Neha Iyer 57 +91-9678871724 (O+) - 14.6 km, score 90\n• Neha Iyer 52 +91-9947657236 (O+) - 1739.1 km, score 78\n• Meera Bhat 110 +91-8046167366 (O+) - 1173.9 km, score 78\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
     "timestamp": "2025-11-17T20:51:41.487278"
+  },
+  {
+    "userId": "guest",
+    "user_message": "find donor",
+    "bot_response": "Please provide a blood type (e.g., O+, A-, etc.) and your city (e.g., Bangalore).",
+    "timestamp": "2025-11-18T07:50:32.880650"
+  },
+  {
+    "userId": "guest",
+    "user_message": "o+",
+    "bot_response": "Thanks. How urgent is it? Choose one: Critical, Urgent, Normal.",
+    "timestamp": "2025-11-18T07:50:38.010349"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Urgent",
+    "bot_response": "Here are nearby donor matches:\n• Neha Iyer 57 +91-9678871724 (O+) - 14.6 km, score 90\n• Neha Iyer 52 +91-9947657236 (O+) - 1739.1 km, score 78\n• Meera Bhat 110 +91-8046167366 (O+) - 1173.9 km, score 78\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-18T07:50:40.493268"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Check Blood Banks",
+    "bot_response": "No blood banks found in Check Blood Banks. Try another city or find donors.",
+    "timestamp": "2025-11-18T07:50:46.246376"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Check Inventory",
+    "bot_response": "Please specify a blood group (e.g., O+) and city (e.g., Delhi) to check inventory.",
+    "timestamp": "2025-11-18T07:50:48.815116"
+  },
+  {
+    "userId": "guest",
+    "user_message": "0+",
+    "bot_response": "I can help you with:\n\n🔍 Finding blood donors\n🏥 Locating blood banks\n📋 Blood donation eligibility\n🩸 Blood type compatibility\n❓ Donation process & benefits\n🚨 Emergency blood requests\n\nWhat would you like to know?",
+    "timestamp": "2025-11-18T07:50:53.579077"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Blood Banks",
+    "bot_response": "No blood banks found in Blood Banks. Try another city or find donors.",
+    "timestamp": "2025-11-18T07:50:57.264663"
+  },
+  {
+    "userId": "test",
+    "user_message": "Blood Banks",
+    "bot_response": "No blood banks found in Blood Banks. Try another city or find donors.",
+    "timestamp": "2025-11-18T07:54:17.621402"
+  },
+  {
+    "userId": "test",
+    "user_message": "Blood Banks",
+    "bot_response": "No blood banks found in Blood Banks. Try another city or find donors.",
+    "timestamp": "2025-11-18T07:55:34.636076"
+  },
+  {
+    "userId": "newtest",
+    "user_message": "Blood Banks",
+    "bot_response": "No blood banks found in Blood Banks. Try another city or find donors.",
+    "timestamp": "2025-11-18T07:56:49.389249"
+  },
+  {
+    "userId": "newtest2",
+    "user_message": "Blood Banks",
+    "bot_response": "No blood banks found in Blood Banks. Try another city or find donors.",
+    "timestamp": "2025-11-18T07:57:15.092705"
+  },
+  {
+    "userId": "finaltest",
+    "user_message": "Blood Banks",
+    "bot_response": "No blood banks found in Blood Banks. Try another city or find donors.",
+    "timestamp": "2025-11-18T07:58:32.780022"
+  },
+  {
+    "userId": "finaltest",
+    "user_message": "Blood Banks",
+    "bot_response": "No blood banks found in Blood Banks. Try another city or find donors.",
+    "timestamp": "2025-11-18T07:58:45.303221"
+  },
+  {
+    "userId": "test999",
+    "user_message": "Blood Banks",
+    "bot_response": "No blood banks found in Blood Banks. Try another city or find donors.",
+    "timestamp": "2025-11-18T08:00:05.442605"
+  },
+  {
+    "userId": "test998",
+    "user_message": "Blood Banks",
+    "bot_response": "No blood banks found in Blood Banks. Try another city or find donors.",
+    "timestamp": "2025-11-18T08:00:13.950547"
+  },
+  {
+    "userId": "freshuser2",
+    "user_message": "Blood Banks",
+    "bot_response": "No blood banks found in Blood Banks. Try another city or find donors.",
+    "timestamp": "2025-11-18T08:01:56.807324"
+  },
+  {
+    "userId": "lasttest",
+    "user_message": "Blood Banks",
+    "bot_response": "No blood banks found in Blood Banks. Try another city or find donors.",
+    "timestamp": "2025-11-18T08:03:59.131076"
+  },
+  {
+    "userId": "debuguser",
+    "user_message": "Blood Banks",
+    "bot_response": "No blood banks found in Blood Banks. Try another city or find donors.",
+    "timestamp": "2025-11-18T08:04:08.813306"
+  },
+  {
+    "userId": "debug3",
+    "user_message": "Blood Banks",
+    "bot_response": "No blood banks found in Blood Banks. Try another city or find donors.",
+    "timestamp": "2025-11-18T08:05:26.728182"
+  },
+  {
+    "userId": "guest",
+    "user_message": "find donors",
+    "bot_response": "Please provide a blood type (e.g., O+, A-, etc.) and your city (e.g., Bangalore).",
+    "timestamp": "2025-11-18T08:12:35.420030"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Blood Banks",
+    "bot_response": "Available blood banks in 7 cities:\n🏥 AIIMS Delhi Blood Bank (Delhi) 📞 +91-4465797074\n🏥 KEM Hospital Blood Bank (Mumbai) 📞 +91-7092992212\n🏥 Gandhi Hospital Blood Bank (Hyderabad) 📞 +91-5900438842\n🏥 Medical College Kolkata Blood Bank (Kolkata) 📞 +91-6296527001\n🏥 Sassoon Hospital Blood Bank (Pune) 📞 +91-3291946556\n\n💡 Tip: Specify a city (e.g., 'Bangalore') or blood type (e.g., 'O+') for more targeted results.",
+    "timestamp": "2025-11-18T08:12:37.788446"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Bangalore",
+    "bot_response": "I can help you with:\n\n🔍 Finding blood donors\n🏥 Locating blood banks\n📋 Blood donation eligibility\n🩸 Blood type compatibility\n❓ Donation process & benefits\n🚨 Emergency blood requests\n\nWhat would you like to know?",
+    "timestamp": "2025-11-18T08:12:43.948572"
+  },
+  {
+    "userId": "guest",
+    "user_message": "0+",
+    "bot_response": "I can help you with:\n\n🔍 Finding blood donors\n🏥 Locating blood banks\n📋 Blood donation eligibility\n🩸 Blood type compatibility\n❓ Donation process & benefits\n🚨 Emergency blood requests\n\nWhat would you like to know?",
+    "timestamp": "2025-11-18T08:12:52.456154"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Find Donors",
+    "bot_response": "Please provide a blood type (e.g., O+, A-, etc.) and your city (e.g., Bangalore).",
+    "timestamp": "2025-11-18T08:12:58.538680"
+  },
+  {
+    "userId": "guest",
+    "user_message": "o+",
+    "bot_response": "Got it, your blood group is O+. Which city are you in?",
+    "timestamp": "2025-11-18T08:13:01.342917"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Delhi",
+    "bot_response": "Thanks. How urgent is it? Choose one: Critical, Urgent, Normal.",
+    "timestamp": "2025-11-18T08:13:05.112888"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Critical",
+    "bot_response": "Here are nearby donor matches:\n• Neha Iyer 57 +91-9678871724 (O+) - 14.6 km, score 92\n• Neha Iyer 52 +91-9947657236 (O+) - 1739.1 km, score 80\n• Meera Bhat 110 +91-8046167366 (O+) - 1173.9 km, score 80\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-18T08:13:07.040327"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Find donors",
+    "bot_response": "Here are nearby donor matches:\n• Amit Patel +91-9186248058 (O+) - 19.2 km, score 92\n• Kavita Rao +91-8166119834 (O+) - 1246.2 km, score 80\n• Kavita Rao +91-9957860697 (O+) - 1741.4 km, score 80\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-18T09:26:59.646231"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Find donors",
+    "bot_response": "Here are nearby donor matches:\n• Amit Patel +91-9186248058 (O+) - 19.2 km, score 92\n• Kavita Rao +91-8166119834 (O+) - 1246.2 km, score 80\n• Kavita Rao +91-9957860697 (O+) - 1741.4 km, score 80\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-18T09:28:48.760734"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Contact Top Donors",
+    "bot_response": "Top donor contacts:\n📞 Amit Patel: +91-9186248058 (O+) - 19.2 km, score 92\n📞 Kavita Rao: +91-8166119834 (O+) - 1246.2 km, score 80\n📞 Kavita Rao: +91-9957860697 (O+) - 1741.4 km, score 80",
+    "timestamp": "2025-11-18T09:28:56.290399"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Show More Donors",
+    "bot_response": "Here are nearby donor matches:\n• Amit Patel +91-9186248058 (O+) - 19.2 km, score 92\n• Kavita Rao +91-8166119834 (O+) - 1246.2 km, score 80\n• Kavita Rao +91-9957860697 (O+) - 1741.4 km, score 80\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-18T09:29:01.611746"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Check Blood Banks",
+    "bot_response": "Available blood banks:\n🏥 AIIMS Delhi Blood Bank (Delhi) - 56 units, N/A 📞 +91-6496680472\n🏥 Safdarjung Hospital Blood Bank (Delhi) - 47 units, N/A 📞 +91-5028970779\n🏥 Ram Manohar Lohia Hospital Blood Bank (Delhi) - 116 units, N/A 📞 +91-5055268942",
+    "timestamp": "2025-11-18T09:29:15.215716"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Blood Banks",
+    "bot_response": "Available blood banks:\n🏥 AIIMS Delhi Blood Bank (Delhi) - 56 units, N/A 📞 +91-6496680472\n🏥 Safdarjung Hospital Blood Bank (Delhi) - 47 units, N/A 📞 +91-5028970779\n🏥 Ram Manohar Lohia Hospital Blood Bank (Delhi) - 116 units, N/A 📞 +91-5055268942",
+    "timestamp": "2025-11-18T09:29:28.510743"
+  },
+  {
+    "userId": "guest",
+    "user_message": "find donors",
+    "bot_response": "Here are nearby donor matches:\n• Amit Patel +91-9186248058 (O+) - 19.2 km, score 92\n• Kavita Rao +91-8166119834 (O+) - 1246.2 km, score 80\n• Kavita Rao +91-9957860697 (O+) - 1741.4 km, score 80\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-18T09:32:16.833089"
+  },
+  {
+    "userId": "testuser123",
+    "user_message": "find donors",
+    "bot_response": "Please provide a blood type (e.g., O+, A-, etc.) and your city (e.g., Bangalore).",
+    "timestamp": "2025-11-18T09:37:33.257724"
+  },
+  {
+    "userId": "testuser123",
+    "user_message": "O+ in Mumbai",
+    "bot_response": "Thanks. How urgent is it? Choose one: Critical, Urgent, Normal.",
+    "timestamp": "2025-11-18T09:37:52.557563"
+  },
+  {
+    "userId": "testuser123",
+    "user_message": "urgent",
+    "bot_response": "Here are nearby donor matches:\n• Amit Patel +91-9186248058 (O+) - 19.2 km, score 90\n• Kavita Rao +91-8166119834 (O+) - 1246.2 km, score 78\n• Kavita Rao +91-9957860697 (O+) - 1741.4 km, score 78\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?",
+    "timestamp": "2025-11-18T09:38:07.462541"
+  },
+  {
+    "userId": "guest",
+    "user_message": "find donor",
+    "bot_response": "Please provide a blood type (e.g., O+, A-, etc.) and your city (e.g., Bangalore).",
+    "timestamp": "2025-11-18T09:45:51.286751"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Find Donors",
+    "bot_response": "Please provide a blood type (e.g., O+, A-, etc.) and your city (e.g., Bangalore).",
+    "timestamp": "2025-11-18T09:45:54.478116"
+  },
+  {
+    "userId": "guest",
+    "user_message": "AB+",
+    "bot_response": "Got it, your blood group is AB+. Which city are you in?",
+    "timestamp": "2025-11-18T09:46:00.428621"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Delhi",
+    "bot_response": "Thanks. How urgent is it? Choose one: Critical, Urgent, Normal.",
+    "timestamp": "2025-11-18T09:46:03.842947"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Normal",
+    "bot_response": "Here are nearby donor matches:\n• Ravi Krishnan +91-7787883753 (AB+) - 18.3 km, score 88\n• Kavita Rao +91-9144243486 (AB+) - 11.2 km, score 87\n• Divya Menon +91-8497501179 (AB+) - 11.6 km, score 87\n\nWould you like me to: Contact top donors, or Check blood banks?",
+    "timestamp": "2025-11-18T09:46:07.506268"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Contact Top Donors",
+    "bot_response": "Top 5 high-score donors (score ≥ 75):\n📞 Ravi Krishnan: +91-7787883753 (AB+) - 18.3 km, score 88\n📞 Kavita Rao: +91-9144243486 (AB+) - 11.2 km, score 87\n📞 Divya Menon: +91-8497501179 (AB+) - 11.6 km, score 87\n📞 Pooja Deshmukh: +91-9653224042 (A-) - 9.5 km, score 83\n📞 Sneha Reddy: +91-7256836236 (AB+) - 26.5 km, score 82",
+    "timestamp": "2025-11-18T09:46:12.771903"
+  },
+  {
+    "userId": "guest",
+    "user_message": "find donors",
+    "bot_response": "Here are nearby donor matches:\n• Ravi Krishnan +91-7787883753 (AB+) - 18.3 km, score 88\n• Kavita Rao +91-9144243486 (AB+) - 11.2 km, score 87\n• Divya Menon +91-8497501179 (AB+) - 11.6 km, score 87\n\nWould you like me to: Contact top donors, or Check blood banks?",
+    "timestamp": "2025-11-18T09:46:30.626664"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Contact Top Donors",
+    "bot_response": "Top 5 high-score donors (score ≥ 75):\n📞 Ravi Krishnan: +91-7787883753 (AB+) - 18.3 km, score 88\n📞 Kavita Rao: +91-9144243486 (AB+) - 11.2 km, score 87\n📞 Divya Menon: +91-8497501179 (AB+) - 11.6 km, score 87\n📞 Pooja Deshmukh: +91-9653224042 (A-) - 9.5 km, score 83\n📞 Sneha Reddy: +91-7256836236 (AB+) - 26.5 km, score 82",
+    "timestamp": "2025-11-18T09:46:35.663641"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Register",
+    "bot_response": "I can help you with:\n\n🔍 Finding blood donors\n🏥 Locating blood banks\n📋 Blood donation eligibility\n🩸 Blood type compatibility\n❓ Donation process & benefits\n🚨 Emergency blood requests\n\nWhat would you like to know?",
+    "timestamp": "2025-11-18T09:46:37.492450"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Blood Banks",
+    "bot_response": "Available blood banks:\n🏥 AIIMS Delhi Blood Bank (Delhi) - 9 units, N/A 📞 +91-6496680472\n🏥 Safdarjung Hospital Blood Bank (Delhi) - 18 units, N/A 📞 +91-5028970779\n🏥 Ram Manohar Lohia Hospital Blood Bank (Delhi) - 39 units, N/A 📞 +91-5055268942",
+    "timestamp": "2025-11-18T09:46:47.844314"
+  },
+  {
+    "userId": "guest",
+    "user_message": "find donor",
+    "bot_response": "Here are nearby donor matches:\n• Ravi Krishnan +91-7787883753 (AB+) - 18.3 km, score 88\n• Kavita Rao +91-9144243486 (AB+) - 11.2 km, score 87\n• Divya Menon +91-8497501179 (AB+) - 11.6 km, score 87\n\nWould you like me to: Contact top donors, or Check blood banks?",
+    "timestamp": "2025-11-18T09:50:13.515455"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Contact Top Donors",
+    "bot_response": "Top 5 high-score donors (score ≥ 75):\n📞 Ravi Krishnan: +91-7787883753 (AB+) - 18.3 km, score 88\n📞 Kavita Rao: +91-9144243486 (AB+) - 11.2 km, score 87\n📞 Divya Menon: +91-8497501179 (AB+) - 11.6 km, score 87\n📞 Pooja Deshmukh: +91-9653224042 (A-) - 9.5 km, score 83\n📞 Sneha Reddy: +91-7256836236 (AB+) - 26.5 km, score 82",
+    "timestamp": "2025-11-18T09:50:15.369185"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Register",
+    "bot_response": "I can help you with:\n\n🔍 Finding blood donors\n🏥 Locating blood banks\n📋 Blood donation eligibility\n🩸 Blood type compatibility\n❓ Donation process & benefits\n🚨 Emergency blood requests\n\nWhat would you like to know?",
+    "timestamp": "2025-11-18T09:50:23.686610"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Blood Banks",
+    "bot_response": "Available blood banks:\n🏥 AIIMS Delhi Blood Bank (Delhi) - 9 units, N/A 📞 +91-6496680472\n🏥 Safdarjung Hospital Blood Bank (Delhi) - 18 units, N/A 📞 +91-5028970779\n🏥 Ram Manohar Lohia Hospital Blood Bank (Delhi) - 39 units, N/A 📞 +91-5055268942",
+    "timestamp": "2025-11-18T09:50:30.473791"
+  },
+  {
+    "userId": "guest",
+    "user_message": "find donor",
+    "bot_response": "Here are nearby donor matches:\n• Ravi Krishnan +91-7787883753 (AB+) - 18.3 km, score 88\n• Kavita Rao +91-9144243486 (AB+) - 11.2 km, score 87\n• Divya Menon +91-8497501179 (AB+) - 11.6 km, score 87\n\nWould you like me to: Contact top donors, or Check blood banks?",
+    "timestamp": "2025-11-18T09:54:57.073739"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Contact Top Donors",
+    "bot_response": "Top 5 high-score donors (score ≥ 75):\n📞 Ravi Krishnan: +91-7787883753 (AB+) - 18.3 km, score 88\n📞 Kavita Rao: +91-9144243486 (AB+) - 11.2 km, score 87\n📞 Divya Menon: +91-8497501179 (AB+) - 11.6 km, score 87\n📞 Pooja Deshmukh: +91-9653224042 (A-) - 9.5 km, score 83\n📞 Sneha Reddy: +91-7256836236 (AB+) - 26.5 km, score 82",
+    "timestamp": "2025-11-18T09:54:58.938477"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Register",
+    "bot_response": "I can help you with:\n\n🔍 Finding blood donors\n🏥 Locating blood banks\n📋 Blood donation eligibility\n🩸 Blood type compatibility\n❓ Donation process & benefits\n🚨 Emergency blood requests\n\nWhat would you like to know?",
+    "timestamp": "2025-11-18T09:55:03.641605"
+  },
+  {
+    "userId": "guest",
+    "user_message": "find donor",
+    "bot_response": "Here are nearby donor matches:\n• Ravi Krishnan +91-7787883753 (AB+) - 18.3 km, score 88\n• Kavita Rao +91-9144243486 (AB+) - 11.2 km, score 87\n• Divya Menon +91-8497501179 (AB+) - 11.6 km, score 87\n\nWould you like me to: Contact top donors, or Check blood banks?",
+    "timestamp": "2025-11-18T10:03:27.455888"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Check Blood Banks",
+    "bot_response": "Available blood banks:\n🏥 AIIMS Delhi Blood Bank (Delhi) - 9 units, N/A 📞 +91-6496680472\n🏥 Safdarjung Hospital Blood Bank (Delhi) - 18 units, N/A 📞 +91-5028970779\n🏥 Ram Manohar Lohia Hospital Blood Bank (Delhi) - 39 units, N/A 📞 +91-5055268942",
+    "timestamp": "2025-11-18T10:03:31.147193"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Check Inventory",
+    "bot_response": "Please specify a blood group (e.g., O+) and city (e.g., Delhi) to check inventory.",
+    "timestamp": "2025-11-18T10:04:21.786318"
+  },
+  {
+    "userId": "guest",
+    "user_message": "0+",
+    "bot_response": "I can help you with:\n\n🔍 Finding blood donors\n🏥 Locating blood banks\n📋 Blood donation eligibility\n🩸 Blood type compatibility\n❓ Donation process & benefits\n🚨 Emergency blood requests\n\nWhat would you like to know?",
+    "timestamp": "2025-11-18T10:04:28.252262"
+  },
+  {
+    "userId": "guest",
+    "user_message": "o- and  delhi",
+    "bot_response": "Welcome to Blood Availability System! Ask me anything about blood donation, donors, or blood banks.",
+    "timestamp": "2025-11-18T10:04:45.374907"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Help",
+    "bot_response": "📞 Contact Information:\n\n🏥 Emergency Helpline: 102\n📧 Email: support@bloodsystem.in\n📱 Phone: +91-XXXX-XXXXXX\n⏰ Available: 24/7\n\n💬 You can also:\n• Use in-app chat\n• Visit nearest blood bank\n• Call any listed hospital\n\nHow can we help you today?",
+    "timestamp": "2025-11-18T10:04:51.506564"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Blood Banks",
+    "bot_response": "No blood banks found in Help. Try another city or find donors.",
+    "timestamp": "2025-11-18T10:04:59.235588"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Check Inventory",
+    "bot_response": "Please specify a blood group (e.g., O+) and city (e.g., Delhi) to check inventory.",
+    "timestamp": "2025-11-18T10:05:08.952375"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Find Donors",
+    "bot_response": "Here are nearby donor matches:\n• Neha Iyer +91-8891110511 (O-) - 21.4 km, score 83\n• Amit Patel +91-7522056723 (O-) - 1726.6 km, score 75\n• Ravi Krishnan +91-9842073145 (O-) - 771.9 km, score 75\n\nWould you like me to: Contact top donors, or Check blood banks?",
+    "timestamp": "2025-11-18T10:05:10.524202"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Contact Top Donors",
+    "bot_response": "Top 4 high-score donors (score ≥ 75):\n📞 Neha Iyer: +91-8891110511 (O-) - 21.4 km, score 83\n📞 Amit Patel: +91-7522056723 (O-) - 1726.6 km, score 75\n📞 Ravi Krishnan: +91-9842073145 (O-) - 771.9 km, score 75\n📞 Divya Menon: +91-8212933448 (O-) - 1161.5 km, score 75",
+    "timestamp": "2025-11-18T10:05:12.814556"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Check Blood Banks",
+    "bot_response": "No blood banks found in Help. Try another city or find donors.",
+    "timestamp": "2025-11-18T10:05:14.959576"
+  },
+  {
+    "userId": "guest",
+    "user_message": "find donor",
+    "bot_response": "Here are nearby donor matches:\n• Neha Iyer +91-8891110511 (O-) - 21.4 km, score 83\n• Amit Patel +91-7522056723 (O-) - 1726.6 km, score 75\n• Ravi Krishnan +91-9842073145 (O-) - 771.9 km, score 75\n\nWould you like me to: Contact top donors, or Check blood banks?",
+    "timestamp": "2025-11-18T10:06:07.500484"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Check Blood Banks",
+    "bot_response": "No blood banks found in Help. Try another city or find donors.",
+    "timestamp": "2025-11-18T10:06:09.835552"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Register",
+    "bot_response": "I can help you with:\n\n🔍 Finding blood donors\n🏥 Locating blood banks\n📋 Blood donation eligibility\n🩸 Blood type compatibility\n❓ Donation process & benefits\n🚨 Emergency blood requests\n\nWhat would you like to know?",
+    "timestamp": "2025-11-18T10:07:07.970150"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Blood Banks",
+    "bot_response": "No blood banks found in Help. Try another city or find donors.",
+    "timestamp": "2025-11-18T10:07:09.684651"
+  },
+  {
+    "userId": "guest",
+    "user_message": "donation eligibility",
+    "bot_response": "To donate blood, you must be:\n✓ 18-65 years old\n✓ Weight at least 50 kg\n✓ In good health\n✓ Not donated blood in last 3 months\n✓ No chronic diseases or infections\n\nWould you like to register as a donor?",
+    "timestamp": "2025-11-18T10:07:33.395817"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Register as Donor",
+    "bot_response": "Here are nearby donor matches:\n• Neha Iyer +91-8891110511 (O-) - 21.4 km, score 83\n• Amit Patel +91-7522056723 (O-) - 1726.6 km, score 75\n• Ravi Krishnan +91-9842073145 (O-) - 771.9 km, score 75\n\nWould you like me to: Contact top donors, or Check blood banks?",
+    "timestamp": "2025-11-18T10:07:36.912027"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Check Blood Banks",
+    "bot_response": "No blood banks found in donation eligibility. Try another city or find donors.",
+    "timestamp": "2025-11-18T10:07:41.108358"
+  },
+  {
+    "userId": "guest",
+    "user_message": "find donor",
+    "bot_response": "Here are nearby donor matches:\n• Neha Iyer +91-8891110511 (O-) - 21.4 km, score 83\n• Amit Patel +91-7522056723 (O-) - 1726.6 km, score 75\n• Ravi Krishnan +91-9842073145 (O-) - 771.9 km, score 75\n\nWould you like me to: Contact top donors, or Check blood banks?",
+    "timestamp": "2025-11-18T10:10:29.430623"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Check Blood Banks",
+    "bot_response": "No blood banks found in donation eligibility. Try another city or find donors.",
+    "timestamp": "2025-11-18T10:10:31.198641"
+  },
+  {
+    "userId": "guest",
+    "user_message": "find donor",
+    "bot_response": "Please provide a blood type (e.g., O+, A-, etc.) and your city (e.g., Bangalore).",
+    "timestamp": "2025-11-18T10:26:24.568307"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Blood Banks",
+    "bot_response": "Available blood banks in 6 cities:\n🏥 AIIMS Delhi Blood Bank (Delhi) 📞 +91-6496680472\n🏥 KEM Hospital Blood Bank (Mumbai) 📞 +91-7710589952\n🏥 Victoria Hospital Blood Bank (Bangalore) 📞 +91-6982668401\n🏥 Gandhi Hospital Blood Bank (Hyderabad) 📞 +91-8084078511\n🏥 Government General Hospital Blood Bank (Chennai) 📞 +91-1692647686\n\n💡 Tip: Specify a city (e.g., 'Bangalore') or blood type (e.g., 'O+') for more targeted results.",
+    "timestamp": "2025-11-18T10:26:26.069640"
+  },
+  {
+    "userId": "guest",
+    "user_message": "Delhi",
+    "bot_response": "Hello! I'm here to help you with blood donation queries. How can I assist you today?",
+    "timestamp": "2025-11-18T10:26:29.250041"
   }
 ]

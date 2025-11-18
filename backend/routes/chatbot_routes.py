@@ -73,6 +73,9 @@ def handle_query():
         enhanced = None
 
         try:
+            # Get session first before parsing (needed for context-aware city detection)
+            sess = _get_session(user_id)
+            
             # Try to parse blood type and city from the message
             # Match blood types without relying on word boundaries around '+'
             bt_pattern = re.compile(r"(?<![A-Za-z0-9])(AB\+|AB\-|A\+|A\-|B\+|B\-|O\+|O\-)(?![A-Za-z0-9])", re.IGNORECASE)
@@ -89,12 +92,23 @@ def handle_query():
             city_text = city_match.group(1).strip() if city_match else None
 
             # If no explicit 'in/near' pattern matched the city, accept a terse standalone city reply
+            # BUT exclude common command words like "Blood Banks", "Find Donors", etc.
+            excluded_phrases = ['blood bank', 'blood banks', 'find donor', 'find donors', 'check inventory', 
+                               'contact', 'register', 'hospitals', 'urgent', 'critical']
             if not city_text:
                 cand = message.strip()
                 # treat short alphabetic messages (like "Bangalore") as city replies
-                # Also accept it if we already have a bloodType in session (user is likely replying with the city)
-                if re.match(r'^[A-Za-z ]{2,40}$', cand) and not bt_match and not urgency_match and (sess.get('bloodType') or True):
-                    city_text = cand
+                # But NOT if it matches excluded command phrases
+                # Accept as city only if: 
+                # 1) It doesn't match any excluded phrases AND
+                # 2) We're explicitly awaiting a city OR we already have a blood type in session
+                is_excluded = any(excl in cand.lower() for excl in excluded_phrases)
+                print(f"[DEBUG] cand='{cand}', is_excluded={is_excluded}, awaiting={sess.get('awaiting')}, bloodType={sess.get('bloodType')}")
+                if re.match(r'^[A-Za-z ]{2,40}$', cand) and not bt_match and not urgency_match and not is_excluded:
+                    # Only treat as city if we're in a conversation flow expecting it
+                    if sess.get('awaiting') == 'city' or sess.get('bloodType'):
+                        city_text = cand
+                        print(f"[DEBUG] Set city_text to '{city_text}'")
             urgency = (urgency_match.group(1).capitalize() if urgency_match else
                        ('Urgent' if 'urgent' in message.lower() else 'Normal'))
             # Attach parsed info for transparency
@@ -105,11 +119,14 @@ def handle_query():
             }
 
             # Slot filling: remember known info and ask next question
-            sess = _get_session(user_id)
             if blood_type:
                 sess['bloodType'] = blood_type
             if city_text:
-                sess['city'] = city_text
+                # Don't save invalid "cities" that are actually command phrases
+                invalid_cities = ['blood bank', 'blood banks', 'find donor', 'find donors', 'check inventory', 
+                                 'contact', 'register', 'hospitals']
+                if not any(inv in city_text.lower() for inv in invalid_cities):
+                    sess['city'] = city_text
             # only update urgency if explicitly provided in message
             if urgency_match:
                 sess['urgency'] = urgency
@@ -128,7 +145,7 @@ def handle_query():
             # Hints from raw message text
             lowered = message.lower()
             find_donors_hint = any(k in lowered for k in ['find donor', 'need blood', 'search donor', 'require blood', 'smart match', 'donor'])
-            blood_bank_hint = any(k in lowered for k in ['blood bank', 'check blood bank', 'show blood bank', 'find blood bank'])
+            blood_bank_hint = any(k in lowered for k in ['blood bank', 'blood banks', 'check blood bank', 'show blood bank', 'find blood bank'])
             inventory_hint = any(k in lowered for k in ['availability', 'stock', 'units', 'inventory'])
             hospital_hint = 'hospital' in lowered
             contact_hint = any(k in lowered for k in ['contact', 'phone', 'call'])
@@ -216,19 +233,19 @@ def handle_query():
                     if transformed:
                         top = transformed[:3]
                         lines = [f"• {t['name']} {t.get('phone', 'N/A')} ({t['blood_group']}) - {t['distance_km']:.1f} km, score {t['score']}" for t in top]
-                        msg = "Here are nearby donor matches:\n" + "\n".join(lines) + "\n\nWould you like me to: Contact top donors, Show more donors, or Check blood banks?"
+                        msg = "Here are nearby donor matches:\n" + "\n".join(lines) + "\n\nWould you like me to: Contact top donors, or Check blood banks?"
                     else:
                         msg = "I couldn't find donors nearby right now. Try increasing distance or checking blood banks."
                     enhanced = {
                         'botResponse': msg,
                         'matches': transformed,
-                        'quickActions': ['Contact Top Donors', 'Show More Donors', 'Check Blood Banks']
+                        'quickActions': ['Contact Top Donors', 'Check Blood Banks']
                     }
                     # We've completed the donor intent; stop awaiting to
                     # prevent re-triggering on unrelated messages.
                     sess['awaiting'] = None
 
-            # Handle "Contact Top Donors" action
+            # Handle "Contact Top Donors" action - Only show donors with high match scores (>= 75)
             if enhanced is None and run_contact_donors:
                 use_blood_type = blood_type or sess.get('bloodType')
                 use_city = sess.get('city') or city_text or 'Delhi'
@@ -247,13 +264,17 @@ def handle_query():
                         Donor.available_for_donation == True
                     ).all()
                     donor_dicts = [d.to_dict() for d in donors]
-                    matches = matching_engine.find_best_matches(
-                        donor_dicts, location, use_urgency, use_blood_type, limit=3
+                    # Get all matches first
+                    all_matches = matching_engine.find_best_matches(
+                        donor_dicts, location, use_urgency, use_blood_type, limit=50
                     )
                     
-                    if matches:
+                    # Filter only high-score donors (>= 75)
+                    high_score_matches = [m for m in all_matches if m.get('matchScore', 0) >= 75]
+                    
+                    if high_score_matches:
                         lines = []
-                        for m in matches:
+                        for m in high_score_matches[:5]:  # Show top 5 high-score donors
                             d = m.get('donor', {})
                             name = d.get('name', 'Unknown')
                             phone = d.get('phone', 'N/A')
@@ -261,19 +282,27 @@ def handle_query():
                             dist = m.get('distance', 0)
                             score = m.get('matchScore', 0)
                             lines.append(f"📞 {name}: {phone} ({bg}) - {dist:.1f} km, score {score}")
-                        msg = "Top donor contacts:\n" + "\n".join(lines)
+                        msg = f"Top {len(high_score_matches[:5])} high-score donors (score ≥ 75):\n" + "\n".join(lines)
                     else:
-                        msg = "No donors available right now. Try blood banks instead."
+                        msg = "No high-score donors available right now (score ≥ 75). Try blood banks instead."
                     
                     enhanced = {
                         'botResponse': msg,
-                        'quickActions': ['Find Donors', 'Blood Banks', 'Register']
+                        'quickActions': ['Find Donors', 'Blood Banks']
                     }
 
             # Handle blood bank search
             if enhanced is None and run_blood_bank_search:
                 use_blood_type = blood_type or sess.get('bloodType')
                 use_city = sess.get('city') or city_text
+                
+                # Exclude invalid "cities" that are actually command phrases or help keywords
+                invalid_cities = ['blood bank', 'blood banks', 'find donor', 'find donors', 'check inventory', 
+                                 'contact', 'register', 'hospitals', 'help', 'hi', 'hello', 'hey']
+                if use_city and any(inv in use_city.lower() for inv in invalid_cities):
+                    use_city = None
+                    # Also clear from session
+                    sess['city'] = None
                 
                 # If no filters provided, show all blood banks (popular cities)
                 if not use_blood_type and not use_city:
@@ -382,7 +411,7 @@ def handle_query():
                     enhanced = {
                         'botResponse': msg,
                         'inventory': banks,
-                        'quickActions': ['Find Donors', 'Check Inventory', 'Register']
+                        'quickActions': ['Find Donors', 'Check Inventory']
                     }
 
             # Inventory lookup when intent suggests availability/stock

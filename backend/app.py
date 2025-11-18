@@ -131,6 +131,9 @@ def create_app(config_name='development'):
 
     return app
 
+# Create app instance for gunicorn
+app = create_app(os.getenv('FLASK_ENV', 'production'))
+
 if __name__ == '__main__':
     env = os.getenv('FLASK_ENV', 'development')
     app = create_app(env)

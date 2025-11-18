@@ -5,11 +5,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 class ApiService {
   // Base URL for the API. For portability we read this from a compile-time
   // environment variable so you can override it at run/build time with
-  // --dart-define=BASE_URL=<url>. If not provided, use production backend.
+  // --dart-define=BASE_URL=<url>. If not provided, use local backend.
   // Examples:
   //  flutter run -d chrome --dart-define=BASE_URL=http://localhost:5000/api
   //  flutter build web --dart-define=BASE_URL=https://api.example.com
-  static const String baseUrl = String.fromEnvironment('BASE_URL', defaultValue: 'https://blood-availability-system.onrender.com/api');
+  static const String baseUrl = String.fromEnvironment('BASE_URL', defaultValue: 'http://localhost:5000/api');
 
   Future<Map<String, String>> _headers({bool auth = false}) async {
     final headers = {'Content-Type': 'application/json'};
@@ -125,6 +125,16 @@ class ApiService {
     return json.decode(res.body);
   }
 
+  Future<Map<String, dynamic>> createDonor(Map<String, dynamic> donorData) async {
+    final uri = Uri.parse('$baseUrl/donors/');
+    final res = await http.post(
+      uri,
+      headers: await _headers(auth: false),
+      body: json.encode(donorData),
+    );
+    return json.decode(res.body);
+  }
+
   // ============ BLOOD REQUESTS ============
   Future<Map<String, dynamic>> getBloodRequests({String? status, String? urgency, String? bloodGroup}) async {
     var queryParams = <String, String>{};
@@ -171,14 +181,22 @@ class ApiService {
   }
 
   // ============ NOTIFICATIONS ============
-  Future<Map<String, dynamic>> getNotifications({bool? isRead, String? type, int limit = 50}) async {
+  Future<Map<String, dynamic>> getNotifications({int? recipientId, String? recipientType, bool? unreadOnly, int limit = 50}) async {
     var queryParams = <String, String>{'limit': limit.toString()};
-    if (isRead != null) queryParams['is_read'] = isRead.toString();
-    if (type != null) queryParams['type'] = type;
+    if (recipientId != null) queryParams['recipientId'] = recipientId.toString();
+    if (recipientType != null) queryParams['recipientType'] = recipientType;
+    if (unreadOnly != null) queryParams['unreadOnly'] = unreadOnly.toString();
 
-  final uri = Uri.parse('$baseUrl/notifications/').replace(queryParameters: queryParams);
-    final res = await http.get(uri, headers: await _headers(auth: true));
-    return json.decode(res.body);
+    final uri = Uri.parse('$baseUrl/notifications/').replace(queryParameters: queryParams);
+    try {
+      final res = await http.get(uri, headers: await _headers());
+      if (res.statusCode == 200) {
+        return json.decode(res.body);
+      }
+      return {'success': false, 'message': 'Failed to fetch notifications', 'data': []};
+    } catch (e) {
+      return {'success': false, 'message': e.toString(), 'data': []};
+    }
   }
 
   Future<Map<String, dynamic>> markNotificationAsRead(int notificationId) async {
@@ -187,16 +205,34 @@ class ApiService {
     return json.decode(res.body);
   }
 
-  Future<Map<String, dynamic>> markAllNotificationsAsRead() async {
-    final uri = Uri.parse('$baseUrl/notifications/mark-all-read');
-    final res = await http.put(uri, headers: await _headers(auth: true));
-    return json.decode(res.body);
+  Future<Map<String, dynamic>> markAllNotificationsAsRead(int recipientId) async {
+    final uri = Uri.parse('$baseUrl/notifications/read-all/$recipientId');
+    try {
+      final res = await http.put(uri, headers: await _headers());
+      return json.decode(res.body);
+    } catch (e) {
+      return {'success': false, 'message': e.toString()};
+    }
   }
 
   Future<Map<String, dynamic>> deleteNotification(int notificationId) async {
   final uri = Uri.parse('$baseUrl/notifications/$notificationId');
     final res = await http.delete(uri, headers: await _headers(auth: true));
     return json.decode(res.body);
+  }
+
+  Future<Map<String, dynamic>> createNotification(Map<String, dynamic> notificationData) async {
+    final uri = Uri.parse('$baseUrl/notifications/');
+    try {
+      final res = await http.post(
+        uri,
+        headers: await _headers(),
+        body: json.encode(notificationData),
+      );
+      return json.decode(res.body);
+    } catch (e) {
+      return {'success': false, 'message': e.toString()};
+    }
   }
 
   // ============ BLOOD BANKS ============

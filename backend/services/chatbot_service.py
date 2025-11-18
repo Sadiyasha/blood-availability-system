@@ -67,7 +67,7 @@ class BloodDonationChatbot:
             'eligibility': {
                 'patterns': ['eligible', 'can i donate', 'eligibility', 'who can donate', 'requirements', 'qualify'],
                 'responses': [
-                    'To donate blood, you must be:\n✓ 18-65 years old\n✓ Weight at least 50 kg\n✓ In good health\n✓ Not donated blood in last 3 months\n✓ No chronic diseases or infections\n\nWould you like to register as a donor?'
+                    'To donate blood, you must be:\n✓ 18-65 years old\n✓ Weight at least 50 kg\n✓ In good health\n✓ Not donated blood in last 3 months\n✓ No chronic diseases or infections'
                 ]
             },
             'blood_types': {
@@ -201,9 +201,9 @@ class BloodDonationChatbot:
             'inventory': ['Check Inventory', 'Blood Banks', 'Find Donors'],
             'hospitals': ['Nearest Hospital', 'View Map', 'Emergency'],
             'blood_banks': ['View Map', 'Search Banks', 'Check Inventory'],
-            'eligibility': ['Register as Donor', 'Check Eligibility', 'Learn More'],
+            'eligibility': ['Check Eligibility', 'Learn More'],
             'emergency': ['Smart Match', 'Nearest Hospital', 'Call Emergency'],
-            'default': ['Find Donors', 'Blood Banks', 'Register']
+            'default': ['Find Donors', 'Blood Banks']
         }
         
         return quick_actions_map.get(intent, ['Find Donors', 'Blood Banks', 'Help'])

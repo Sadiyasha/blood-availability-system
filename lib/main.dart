@@ -452,6 +452,7 @@ class _MainDashboardState extends State<MainDashboard> {
   Position? currentPosition;
   List<Map<String, dynamic>> nearbyDonors = [];
   Timer? notificationTimer;
+  final ApiService _apiService = ApiService();
 
   // Optional persisted filter selections used by navigation methods
   // These may be set via filter dialogs; keeping them nullable avoids build errors
@@ -522,99 +523,89 @@ class _MainDashboardState extends State<MainDashboard> {
 
     await flutterLocalNotificationsPlugin?.initialize(initializationSettings);
 
-    // Add initial notifications
-    _addInitialNotifications();
+    // Load real notifications from backend
+    _loadNotifications();
   }
 
-  void _addInitialNotifications() {
-    notifications = [
-      {
-        'id': '1',
-        'title': 'New donor matched nearby',
-        'message': 'John Doe (O+) available 1.2km away',
-        'time': '2 min ago',
-        'icon': Icons.person_add,
-        'type': 'match',
-        'isRead': false,
-      },
-      {
-        'id': '2',
-        'title': '🚨 Emergency Alert',
-        'message': 'Critical O- needed at City Hospital',
-        'time': '5 min ago',
-        'icon': Icons.emergency,
-        'type': 'emergency',
-        'isRead': false,
-      },
-      {
-        'id': '3',
-        'title': 'Blood camp tomorrow',
-        'message': 'Free health checkup at City Center 9 AM',
-        'time': '1 hour ago',
-        'icon': Icons.event,
-        'type': 'event',
-        'isRead': true,
-      },
-      {
-        'id': '4',
-        'title': 'Donation reminder',
-        'message': 'You are eligible to donate blood again',
-        'time': '3 hours ago',
-        'icon': Icons.check_circle,
-        'type': 'reminder',
-        'isRead': false,
-      },
-    ];
+  Future<void> _loadNotifications() async {
+    try {
+      // Fetch random donor IDs for notifications (simulate user notifications)
+      final donorIds = [1, 2, 3, 5, 10, 15, 20, 25]; // Sample donor IDs from database
+      final randomDonorId = donorIds[math.Random().nextInt(donorIds.length)];
+      
+      final response = await _apiService.getNotifications(
+        recipientId: randomDonorId,
+        recipientType: 'Donor',
+        limit: 20,
+      );
+
+      if (response['success'] == true && response['data'] != null) {
+        setState(() {
+          notifications = (response['data'] as List).map((notif) {
+            return {
+              'id': notif['id'].toString(),
+              'title': notif['title'] ?? 'Notification',
+              'message': notif['message'] ?? '',
+              'time': _formatTime(notif['created_at']),
+              'icon': _getIconForType(notif['notification_type']),
+              'type': notif['notification_type']?.toLowerCase() ?? 'info',
+              'isRead': notif['read'] ?? false,
+              'priority': notif['priority'] ?? 'Medium',
+            };
+          }).toList();
+        });
+      }
+    } catch (e) {
+      print('Error loading notifications: $e');
+    }
+  }
+
+  IconData _getIconForType(String? type) {
+    switch (type?.toLowerCase()) {
+      case 'bloodrequest':
+        return Icons.water_drop;
+      case 'thankyou':
+        return Icons.favorite;
+      case 'emergency':
+        return Icons.emergency;
+      case 'donationreminder':
+        return Icons.schedule;
+      case 'match':
+        return Icons.person_add;
+      case 'donorregistration':
+        return Icons.person_add;
+      default:
+        return Icons.notifications;
+    }
+  }
+
+  String _formatTime(dynamic timestamp) {
+    if (timestamp == null) return 'Just now';
+    try {
+      final DateTime created = DateTime.parse(timestamp.toString());
+      final Duration diff = DateTime.now().difference(created);
+      
+      if (diff.inSeconds < 60) {
+        return 'Just now';
+      } else if (diff.inMinutes < 60) {
+        return '${diff.inMinutes} min ago';
+      } else if (diff.inHours < 24) {
+        return '${diff.inHours} hour${diff.inHours > 1 ? 's' : ''} ago';
+      } else if (diff.inDays < 7) {
+        return '${diff.inDays} day${diff.inDays > 1 ? 's' : ''} ago';
+      } else {
+        return created.toString().split(' ')[0];
+      }
+    } catch (e) {
+      return 'Recently';
+    }
   }
 
   void _startNotificationUpdates() {
+    // Refresh notifications from backend every 30 seconds
     notificationTimer = Timer.periodic(const Duration(seconds: 30), (timer) {
       if (mounted) {
-        _addRandomNotification();
-      }
-    });
-  }
-
-  void _addRandomNotification() {
-    final random = math.Random();
-    final notificationTypes = [
-      {
-        'title': 'New donor registered',
-        'message': 'Sarah M. (B+) joined nearby',
-        'type': 'match',
-        'icon': Icons.person_add,
-      },
-      {
-        'title': 'Blood request fulfilled',
-        'message': 'Your donation helped save a life!',
-        'type': 'success',
-        'icon': Icons.favorite,
-      },
-      {
-        'title': 'Stock update',
-        'message': 'A+ blood stock is running low',
-        'type': 'warning',
-        'icon': Icons.warning,
-      },
-    ];
-
-    final notification =
-        notificationTypes[random.nextInt(notificationTypes.length)];
-
-    setState(() {
-      notifications.insert(0, {
-        'id': DateTime.now().millisecondsSinceEpoch.toString(),
-        'title': notification['title'],
-        'message': notification['message'],
-        'time': 'Just now',
-        'icon': notification['icon'],
-        'type': notification['type'],
-        'isRead': false,
-      });
-
-      // Keep only last 10 notifications
-      if (notifications.length > 10) {
-        notifications = notifications.take(10).toList();
+        _loadNotifications();
       }
     });
   }
@@ -4453,14 +4444,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
     }
 
     try {
-      // Create user data
+      // Create user data for localStorage
       final userData = {
         'name': _nameController.text,
         'email': _emailController.text,
         'password': _passwordController.text,
         'phone': _phoneController.text,
         'location': _locationController.text,
-        'blood_group': _selectedBloodGroup,
+        'bloodType': _selectedBloodGroup,
         'role': _selectedRole,
         'registered_date': DateTime.now().toIso8601String(),
       };
@@ -4476,6 +4467,43 @@ class _RegisterScreenState extends State<RegisterScreen> {
       users.add(userData);
       html.window.localStorage['blood_users'] = jsonEncode(users);
 
+      // Save to backend database if role is Donor
+      if (_selectedRole == 'Donor') {
+        try {
+          final apiService = ApiService();
+          final donorData = {
+            'name': _nameController.text,
+            'bloodType': _selectedBloodGroup,
+            'phone': _phoneController.text.isNotEmpty ? _phoneController.text : '0000000000',
+            'email': _emailController.text,
+            'age': 25, // Default age
+            'gender': 'Other', // Default gender
+            'latitude': 0.0,
+            'longitude': 0.0,
+            'address': {
+              'street': '',
+              'city': _locationController.text.isNotEmpty ? _locationController.text : 'Unknown',
+              'state': '',
+              'pincode': '',
+            },
+            'availableForDonation': true,
+          };
+          
+          await apiService.createDonor(donorData);
+          print('✅ Donor saved to backend database');
+        } catch (e) {
+          print('⚠️ Failed to save donor to backend: $e');
+          // Continue even if backend save fails
+        }
+      }
+
+      // Create notification for new donor registration
+      await _createRegistrationNotification(
+        _nameController.text,
+        _selectedBloodGroup,
+        _locationController.text,
+      );
+
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('✅ Registration successful!'),
@@ -4489,6 +4517,28 @@ class _RegisterScreenState extends State<RegisterScreen> {
       ScaffoldMessenger.of(
         context,
       ).showSnackBar(SnackBar(content: Text('Registration failed: $e')));
+    }
+  }
+
+  Future<void> _createRegistrationNotification(
+      String name, String bloodType, String location) async {
+    try {
+      final apiService = ApiService();
+      // Create notifications for multiple random donors to simulate broadcast
+      final donorIds = [1, 2, 3, 5, 10, 15, 20, 25, 30, 35];
+      
+      for (int donorId in donorIds.take(5)) {
+        await apiService.createNotification({
+          'recipientId': donorId,
+          'recipientType': 'Donor',
+          'title': 'New donor registered',
+          'message': '$name ($bloodType) joined nearby${location.isNotEmpty ? " from $location" : ""}',
+          'type': 'DonorRegistration',
+          'priority': 'Low',
+        });
+      }
+    } catch (e) {
+      print('Error creating registration notification: $e');
     }
   }
 }

@@ -6,21 +6,33 @@ class Config:
     """Base configuration"""
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev-secret-key-change-in-production'
     
-    # Database Configuration (SQLite for development, MySQL for production)
-    MYSQL_HOST = os.environ.get('MYSQL_HOST') or 'localhost'
-    MYSQL_PORT = int(os.environ.get('MYSQL_PORT') or 3306)
-    MYSQL_USER = os.environ.get('MYSQL_USER') or 'root'
-    MYSQL_PASSWORD = os.environ.get('MYSQL_PASSWORD') or 'password'
-    MYSQL_DATABASE = os.environ.get('MYSQL_DATABASE') or 'blood_availability_system'
+    # Database Configuration
+    # Priority: DATABASE_URL (Render/Heroku) > MySQL > SQLite (dev fallback)
+    DATABASE_URL = os.environ.get('DATABASE_URL')
     
-    # Use SQLite if MySQL not available
-    USE_SQLITE = os.environ.get('USE_SQLITE', 'True').lower() == 'true'
-    
-    if USE_SQLITE:
-        basedir = os.path.abspath(os.path.dirname(__file__))
-        SQLALCHEMY_DATABASE_URI = f'sqlite:///{os.path.join(basedir, "instance", "blood_system.db")}'
+    if DATABASE_URL:
+        # Production: Use DATABASE_URL from Render/Heroku
+        # Fix for PostgreSQL (Render uses postgresql://, SQLAlchemy needs postgresql+psycopg2://)
+        if DATABASE_URL.startswith('postgres://'):
+            DATABASE_URL = DATABASE_URL.replace('postgres://', 'postgresql+psycopg2://', 1)
+        elif DATABASE_URL.startswith('postgresql://'):
+            DATABASE_URL = DATABASE_URL.replace('postgresql://', 'postgresql+psycopg2://', 1)
+        SQLALCHEMY_DATABASE_URI = DATABASE_URL
     else:
-        SQLALCHEMY_DATABASE_URI = f'mysql+pymysql://{MYSQL_USER}:{MYSQL_PASSWORD}@{MYSQL_HOST}:{MYSQL_PORT}/{MYSQL_DATABASE}'
+        # Development: Use MySQL or SQLite
+        MYSQL_HOST = os.environ.get('MYSQL_HOST') or 'localhost'
+        MYSQL_PORT = int(os.environ.get('MYSQL_PORT') or 3306)
+        MYSQL_USER = os.environ.get('MYSQL_USER') or 'root'
+        MYSQL_PASSWORD = os.environ.get('MYSQL_PASSWORD') or 'password'
+        MYSQL_DATABASE = os.environ.get('MYSQL_DATABASE') or 'blood_availability_system'
+        
+        USE_SQLITE = os.environ.get('USE_SQLITE', 'True').lower() == 'true'
+        
+        if USE_SQLITE:
+            basedir = os.path.abspath(os.path.dirname(__file__))
+            SQLALCHEMY_DATABASE_URI = f'sqlite:///{os.path.join(basedir, "instance", "blood_system.db")}'
+        else:
+            SQLALCHEMY_DATABASE_URI = f'mysql+pymysql://{MYSQL_USER}:{MYSQL_PASSWORD}@{MYSQL_HOST}:{MYSQL_PORT}/{MYSQL_DATABASE}'
     
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_ECHO = False

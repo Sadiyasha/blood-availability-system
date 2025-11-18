@@ -1,8 +1,43 @@
+# Netlify Configuration for Flutter Web App
+
 [build]
+  # Build command - using pre-built artifacts
+  command = "echo 'Using pre-built Flutter web artifacts from build/web'"
   publish = "build/web"
-  command = "flutter build web --release"
+  
+[build.environment]
+  NODE_VERSION = "18"
 
 [[redirects]]
+  # Single Page Application (SPA) redirect
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[headers]]
+  # Security headers for all pages
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer-when-downgrade"
+    Content-Security-Policy = "default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self' https:;"
+
+[[headers]]
+  # Cache static assets for 1 year
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  # Cache CanvasKit files
+  for = "/canvaskit/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  # Cache Flutter JS
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
