@@ -8,12 +8,11 @@ from models.blood_bank import BloodBank
 from models.hospital import Hospital
 from models.blood_request import BloodRequest
 from models.notification import Notification
-import os
 
 seed_bp = Blueprint('seed', __name__)
 
 @seed_bp.route('/seed-database', methods=['GET'])
-def seed_database():
+def seed_database_endpoint():
     """
     Web-accessible endpoint to seed the database with initial data.
     Visit: https://your-backend.onrender.com/api/seed-database
@@ -34,45 +33,41 @@ def seed_database():
                 }
             }), 200
 
-        # Import seed_database function
-        import sys
+        # Use subprocess to run seed script to avoid import issues
+        import subprocess
+        import os
         backend_dir = os.path.dirname(os.path.dirname(__file__))
-        sys.path.insert(0, backend_dir)
+        seed_script = os.path.join(backend_dir, 'seed_database.py')
         
-        from seed_database import create_donors, create_hospitals, create_blood_banks, create_blood_requests, create_notifications
+        result = subprocess.run(
+            ['python', seed_script],
+            cwd=backend_dir,
+            capture_output=True,
+            text=True,
+            timeout=60
+        )
         
-        # Seed the database
-        print("Creating 150 donors...")
-        create_donors()
-        
-        print("Creating 58 hospitals...")
-        create_hospitals()
-        
-        print("Creating 41 blood banks...")
-        create_blood_banks()
-        
-        print("Creating 30 blood requests...")
-        create_blood_requests()
-        
-        print("Creating 20 notifications...")
-        create_notifications()
-        
-        db.session.commit()
-        
-        return jsonify({
-            'status': 'success',
-            'message': 'Database seeded successfully!',
-            'counts': {
-                'donors': Donor.query.count(),
-                'blood_banks': BloodBank.query.count(),
-                'hospitals': Hospital.query.count(),
-                'blood_requests': BloodRequest.query.count(),
-                'notifications': Notification.query.count()
-            }
-        }), 200
+        if result.returncode == 0:
+            return jsonify({
+                'status': 'success',
+                'message': 'Database seeded successfully!',
+                'output': result.stdout,
+                'counts': {
+                    'donors': Donor.query.count(),
+                    'blood_banks': BloodBank.query.count(),
+                    'hospitals': Hospital.query.count(),
+                    'blood_requests': BloodRequest.query.count(),
+                    'notifications': Notification.query.count()
+                }
+            }), 200
+        else:
+            return jsonify({
+                'status': 'error',
+                'message': 'Failed to seed database',
+                'error': result.stderr
+            }), 500
         
     except Exception as e:
-        db.session.rollback()
         return jsonify({
             'status': 'error',
             'message': f'Failed to seed database: {str(e)}'
