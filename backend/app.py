@@ -55,6 +55,7 @@ def create_app(config_name='development'):
             chatbot_bp = None
     
     from routes.map_routes import map_bp
+    from routes.seed_routes import seed_bp
     
     app.register_blueprint(donor_bp, url_prefix='/api/donors')
     app.register_blueprint(hospital_bp, url_prefix='/api/hospitals')
@@ -66,6 +67,7 @@ def create_app(config_name='development'):
     if chatbot_bp:
         app.register_blueprint(chatbot_bp, url_prefix='/api/chatbot')
     app.register_blueprint(map_bp, url_prefix='/api/map')
+    app.register_blueprint(seed_bp, url_prefix='/api')
     
     # Root and health endpoints
     @app.route('/')
